@@ -1,10 +1,12 @@
 import React from 'react'
 import Banner from '../Banner/Banner'
+import TagSection from '../TagSection/TagSection'
 
 const Home = () => {
     return (
-        <div className='space-y-12'>
+        <div className=''>
             <Banner></Banner>
+            <TagSection></TagSection>
         </div>
     )
 }

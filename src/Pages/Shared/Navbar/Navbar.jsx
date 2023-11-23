@@ -31,7 +31,7 @@ const Navbar = () => {
                     <div className="flex items-center justify-between  lg:flex-grow ">
                         <a href="/">
                             <img
-                                className="w-20 lg:w-36 h-full sm:h-7 object-cover"
+                                className="w-20 lg:w-44 h-full sm:h-7 object-cover"
                                 src={logo}
                                 alt=""
                             />
@@ -94,18 +94,18 @@ const Navbar = () => {
                             >
                                 Home
                             </NavLink>
-                            {/* <NavLink
+                            <NavLink
                                 to="/menu"
                                 className="px-3 py-2 mx-2 text-base text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                             >
                                 Menu
-                            </NavLink> */}
-                            {/* <NavLink
+                            </NavLink>
+                            <NavLink
                                 to="/order/salad"
                                 className="px-3 py-2 mx-2 text-base text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                             >
                                 Order
-                            </NavLink> */}
+                            </NavLink>
                             {/* {
                                 user && isAdmin && <NavLink
                                     to="/dashboard/adminHome"
