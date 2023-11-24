@@ -1,195 +1,386 @@
 [
     {
-        "id": 1,
-        "title": "Introduction to React Hooks",
-        "content": "React Hooks provide a way to use state and side-effects in functional components. In this post, we will explore the basics of React Hooks and how they can improve the way we write React components.",
-        "author": "John Doe",
-        "date": "2023-01-15",
+        "_id": "1",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "John Doe"
+        },
+        "title": "Code Masterpiece",
+        "description": "Explore the world of coding with this amazing post.",
         "tags": [
-            "React",
-            "Hooks",
-            "JavaScript"
-        ]
+            "Code"
+        ],
+        "time": "2023-11-23T10:30:00Z",
+        "upVote": 15,
+        "downVote": 3,
+        "commentsCount": 8
     },
     {
-        "id": 2,
-        "title": "Getting Started with MongoDB",
-        "content": "MongoDB is a NoSQL database that provides a flexible and scalable solution for storing and retrieving data. This post covers the basics of setting up MongoDB and performing CRUD operations.",
-        "author": "Jane Smith",
-        "date": "2023-02-02",
+        "_id": "2",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Jane Smith"
+        },
+        "title": "WebDev Wonders",
+        "description": "Dive into the world of web development with this exciting post.",
         "tags": [
-            "MongoDB",
-            "Database",
-            "NoSQL"
-        ]
+            "WebDev"
+        ],
+        "time": "2023-11-22T15:45:00Z",
+        "upVote": 20,
+        "downVote": 5,
+        "commentsCount": 12
     },
     {
-        "id": 3,
-        "title": "Responsive Web Design with CSS Grid",
-        "content": "CSS Grid is a powerful layout system that makes it easy to create responsive web designs. Learn how to use CSS Grid to build flexible and grid-based layouts for your websites.",
-        "author": "Alex Johnson",
-        "date": "2023-03-10",
+        "_id": "3",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Elena Rodriguez"
+        },
+        "title": "AI Marvels",
+        "description": "Discover the wonders of Artificial Intelligence in this intriguing post.",
         "tags": [
-            "CSS",
-            "Web Design",
-            "Responsive"
-        ]
+            "AI"
+        ],
+        "time": "2023-11-21T12:15:00Z",
+        "upVote": 18,
+        "downVote": 2,
+        "commentsCount": 10
     },
     {
-        "id": 4,
-        "title": "Exploring Machine Learning Algorithms",
-        "content": "Machine learning involves the use of algorithms that allow computers to learn patterns from data. This post explores some popular machine learning algorithms and their applications.",
-        "author": "Sam Wilson",
-        "date": "2023-04-05",
+        "_id": "4",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Chris Johnson"
+        },
+        "title": "ML Explorations",
+        "description": "Embark on a journey through the fascinating world of Machine Learning.",
         "tags": [
-            "Machine Learning",
-            "Algorithms",
-            "Data Science"
-        ]
+            "ML"
+        ],
+        "time": "2023-11-20T09:45:00Z",
+        "upVote": 22,
+        "downVote": 4,
+        "commentsCount": 15
     },
     {
-        "id": 5,
-        "title": "Building RESTful APIs with Node.js and Express",
-        "content": "Learn how to build RESTful APIs using Node.js and Express. This post covers the basics of setting up a server, defining routes, and handling HTTP requests for creating, reading, updating, and deleting resources.",
-        "author": "Emily Turner",
-        "date": "2023-05-20",
+        "_id": "5",
+        "author": {
+            "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Mia Brown"
+        },
+        "title": "Security Insights",
+        "description": "Uncover the latest insights into the realm of cybersecurity in this post.",
         "tags": [
-            "Node.js",
-            "Express",
-            "RESTful API"
-        ]
-    },
-    {
-        "id": 6,
-        "title": "Introduction to Python Data Science",
-        "content": "Python is a versatile language for data science. This post introduces key libraries like NumPy, Pandas, and Matplotlib and demonstrates how to perform data analysis and visualization using Python.",
-        "author": "Michael Davis",
-        "date": "2023-06-08",
-        "tags": [
-            "Python",
-            "Data Science",
-            "NumPy",
-            "Pandas"
-        ]
-    },
-    {
-        "id": 7,
-        "title": "Getting Started with React Native",
-        "content": "React Native allows developers to build mobile apps using React. This post provides a step-by-step guide on getting started with React Native, setting up a development environment, and creating your first mobile app.",
-        "author": "Sophie Anderson",
-        "date": "2023-07-15",
-        "tags": [
-            "React Native",
-            "Mobile App",
-            "JavaScript"
-        ]
-    },
-    {
-        "id": 8,
-        "title": "Cybersecurity Best Practices for Web Applications",
-        "content": "Security is crucial for web applications. This post covers best practices for securing web applications, including HTTPS implementation, input validation, and protection against common security threats.",
-        "author": "William Clark",
-        "date": "2023-08-03",
-        "tags": [
-            "Cybersecurity",
-            "Web Applications",
             "Security"
-        ]
+        ],
+        "time": "2023-11-19T16:30:00Z",
+        "upVote": 25,
+        "downVote": 6,
+        "commentsCount": 18
     },
     {
-        "id": 9,
-        "title": "The Future of Artificial Intelligence",
-        "content": "Explore the current trends and future possibilities of artificial intelligence. This post discusses advancements in AI technologies, ethical considerations, and potential applications in various industries.",
-        "author": "Olivia White",
-        "date": "2023-09-12",
+        "_id": "6",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "James Wilson"
+        },
+        "title": "Data Insights",
+        "description": "Dive deep into the world of data with this insightful post.",
         "tags": [
-            "Artificial Intelligence",
-            "AI",
-            "Future Tech"
-        ]
+            "Data"
+        ],
+        "time": "2023-11-18T14:20:00Z",
+        "upVote": 17,
+        "downVote": 3,
+        "commentsCount": 11
     },
     {
-        "id": 10,
-        "title": "JavaScript ES6 Features You Should Know",
-        "content": "ES6 introduced several new features and improvements to JavaScript. This post highlights key ES6 features, such as arrow functions, template literals, destructuring, and the let and const keywords.",
-        "author": "Daniel Miller",
-        "date": "2023-10-01",
+        "_id": "7",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Sophia Miller"
+        },
+        "title": "Cloud Chronicles",
+        "description": "Explore the latest developments in cloud technology in this intriguing post.",
         "tags": [
-            "JavaScript",
-            "ES6",
-            "Programming"
-        ]
+            "Cloud"
+        ],
+        "time": "2023-11-17T11:10:00Z",
+        "upVote": 19,
+        "downVote": 4,
+        "commentsCount": 14
     },
     {
-        "id": 11,
-        "title": "Diving into GraphQL: A Comprehensive Guide",
-        "content": "GraphQL is a query language for APIs that provides a more efficient and powerful alternative to traditional REST APIs. This guide explores the fundamentals of GraphQL, creating schemas, and executing queries.",
-        "author": "Andrew Roberts",
-        "date": "2023-11-18",
+        "_id": "8",
+        "author": {
+            "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Alex Turner"
+        },
+        "title": "App Innovations",
+        "description": "Get inspired by the latest innovations in app development.",
         "tags": [
-            "GraphQL",
-            "APIs",
-            "Web Development"
-        ]
+            "Apps"
+        ],
+        "time": "2023-11-16T09:00:00Z",
+        "upVote": 16,
+        "downVote": 2,
+        "commentsCount": 13
     },
     {
-        "id": 12,
-        "title": "Responsive Web Design Best Practices",
-        "content": "With the increasing use of various devices to access the web, it's essential to design responsive websites. This post covers best practices for creating responsive web designs, including media queries and flexible grid layouts.",
-        "author": "Sophia Brown",
-        "date": "2023-12-02",
+        "_id": "9",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Olivia White"
+        },
+        "title": "Blockchain Odyssey",
+        "description": "Embark on an odyssey through the blockchain landscape with this post.",
         "tags": [
-            "Web Design",
-            "Responsive Design",
-            "CSS"
-        ]
+            "Blockchain"
+        ],
+        "time": "2023-11-15T16:45:00Z",
+        "upVote": 21,
+        "downVote": 3,
+        "commentsCount": 17
     },
     {
-        "id": 13,
-        "title": "Machine Learning in Healthcare: Applications and Challenges",
-        "content": "Machine learning has transformative potential in healthcare. This post explores applications of machine learning in diagnosing diseases, predicting patient outcomes, and challenges associated with implementing ML in healthcare.",
-        "author": "David Kim",
-        "date": "2023-12-18",
+        "_id": "10",
+        "author": {
+            "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Ethan Davis"
+        },
+        "title": "Tech Marvels",
+        "description": "Explore the marvels of technology in this captivating post.",
         "tags": [
-            "Machine Learning",
-            "Healthcare",
-            "Data Science"
-        ]
+            "Tech"
+        ],
+        "time": "2023-11-14T13:30:00Z",
+        "upVote": 23,
+        "downVote": 5,
+        "commentsCount": 16
     },
     {
-        "id": 14,
-        "title": "Exploring the World of Virtual Reality",
-        "content": "Virtual Reality (VR) is reshaping the way we experience digital content. Learn about the basics of VR technology, its applications in gaming and beyond, and the future possibilities of immersive experiences.",
-        "author": "Elena Rodriguez",
-        "date": "2024-01-05",
+        "_id": "11",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Alice Johnson"
+        },
+        "title": "Mastering Code 3",
+        "description": "Unlock the secrets of coding with this in-depth post.",
         "tags": [
-            "Virtual Reality",
-            "VR",
-            "Technology"
-        ]
+            "Code"
+        ],
+        "time": "2023-11-20T14:15:00Z",
+        "upVote": 25,
+        "downVote": 4,
+        "commentsCount": 10
     },
     {
-        "id": 15,
-        "title": "Modern CSS Layout Techniques",
-        "content": "CSS has evolved, and modern layout techniques offer more flexibility and control. This post covers CSS Grid, Flexbox, and other advanced layout features to create sophisticated and responsive page layouts.",
-        "author": "Benjamin Taylor",
-        "date": "2024-01-20",
+        "_id": "12",
+        "author": {
+            "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Robert Turner"
+        },
+        "title": "WebDev Wonders 4",
+        "description": "Dive into the latest trends and wonders of web development.",
         "tags": [
-            "CSS",
-            "Web Development",
-            "Frontend"
-        ]
+            "WebDev"
+        ],
+        "time": "2023-11-19T18:30:00Z",
+        "upVote": 18,
+        "downVote": 2,
+        "commentsCount": 15
     },
     {
-        "id": 16,
-        "title": "The Rise of DevOps: Bridging the Gap Between Development and Operations",
-        "content": "DevOps practices aim to improve collaboration between development and operations teams, leading to faster and more reliable software delivery. Explore the principles, tools, and benefits of adopting DevOps.",
-        "author": "Natalie Carter",
-        "date": "2024-02-08",
+        "_id": "13",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Eva Martinez"
+        },
+        "title": "AI Insights 5",
+        "description": "Explore the fascinating world of artificial intelligence.",
         "tags": [
-            "DevOps",
-            "Software Development",
-            "Collaboration"
-        ]
+            "AI"
+        ],
+        "time": "2023-11-18T12:45:00Z",
+        "upVote": 22,
+        "downVote": 6,
+        "commentsCount": 8
+    },
+    {
+        "_id": "14",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Chris Baker"
+        },
+        "title": "ML Marvels 6",
+        "description": "Dive into the marvels and wonders of machine learning.",
+        "tags": [
+            "ML"
+        ],
+        "time": "2023-11-17T08:20:00Z",
+        "upVote": 30,
+        "downVote": 3,
+        "commentsCount": 13
+    },
+    {
+        "_id": "15",
+        "author": {
+            "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Olivia Foster"
+        },
+        "title": "Security Chronicles 7",
+        "description": "Explore the latest developments and stories in cybersecurity.",
+        "tags": [
+            "Security"
+        ],
+        "time": "2023-11-16T16:55:00Z",
+        "upVote": 15,
+        "downVote": 1,
+        "commentsCount": 20
+    },
+    {
+        "_id": "16",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Daniel Lee"
+        },
+        "title": "Data Insights 8",
+        "description": "Delve into the world of data with these insightful observations.",
+        "tags": [
+            "Data"
+        ],
+        "time": "2023-11-15T09:10:00Z",
+        "upVote": 17,
+        "downVote": 5,
+        "commentsCount": 18
+    },
+    {
+        "_id": "17",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Sophia Reynolds"
+        },
+        "title": "Cloud Journeys 9",
+        "description": "Embark on cloud journeys and discover the possibilities.",
+        "tags": [
+            "Cloud"
+        ],
+        "time": "2023-11-14T13:25:00Z",
+        "upVote": 28,
+        "downVote": 4,
+        "commentsCount": 16
+    },
+    {
+        "_id": "18",
+        "author": {
+            "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "David Turner"
+        },
+        "title": "App Adventures 10",
+        "description": "Embark on exciting adventures in the world of app development.",
+        "tags": [
+            "Apps"
+        ],
+        "time": "2023-11-13T17:40:00Z",
+        "upVote": 24,
+        "downVote": 2,
+        "commentsCount": 14
+    },
+    {
+        "_id": "19",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Emily Thompson"
+        },
+        "title": "Blockchain Explorations 11",
+        "description": "Embark on a journey to explore the wonders of blockchain technology.",
+        "tags": [
+            "Blockchain"
+        ],
+        "time": "2023-11-12T12:55:00Z",
+        "upVote": 19,
+        "downVote": 6,
+        "commentsCount": 22
+    },
+    {
+        "_id": "20",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Ethan Wilson"
+        },
+        "title": "Security Spotlight 20",
+        "description": "Explore the latest security trends and stay informed.",
+        "tags": [
+            "Security"
+        ],
+        "time": "2023-11-07T22:10:00Z",
+        "upVote": 25,
+        "downVote": 4,
+        "commentsCount": 15
+    },
+    {
+        "_id": "21",
+        "author": {
+            "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Olivia Smith"
+        },
+        "title": "Data Discoveries 21",
+        "description": "Discover new insights into the fascinating world of data.",
+        "tags": [
+            "Data"
+        ],
+        "time": "2023-11-06T02:25:00Z",
+        "upVote": 19,
+        "downVote": 2,
+        "commentsCount": 13
+    },
+    {
+        "_id": "22",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Lucas Miller"
+        },
+        "title": "Cloud Chronicles 22",
+        "description": "Embark on a journey through the fascinating world of cloud technology.",
+        "tags": [
+            "Cloud"
+        ],
+        "time": "2023-11-05T06:40:00Z",
+        "upVote": 27,
+        "downVote": 3,
+        "commentsCount": 19
+    },
+    {
+        "_id": "23",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "Mia Davis"
+        },
+        "title": "Apps Amazement 23",
+        "description": "Get amazed by the latest and greatest in the world of apps.",
+        "tags": [
+            "Apps"
+        ],
+        "time": "2023-11-04T10:55:00Z",
+        "upVote": 22,
+        "downVote": 1,
+        "commentsCount": 17
+    },
+    {
+        "_id": "24",
+        "author": {
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "name": "James Turner"
+        },
+        "title": "Blockchain Buzz 24",
+        "description": "Dive into the buzzing world of blockchain technology.",
+        "tags": [
+            "Blockchain"
+        ],
+        "time": "2023-11-03T15:10:00Z",
+        "upVote": 18,
+        "downVote": 5,
+        "commentsCount": 14
     }
 ]
