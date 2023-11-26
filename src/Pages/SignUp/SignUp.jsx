@@ -6,13 +6,13 @@ import { useForm } from "react-hook-form"
 import { BsPersonVideo2 } from "react-icons/bs";
 import { MdAddPhotoAlternate } from "react-icons/md";
 import Swal from 'sweetalert2'
-// import useAxiosPublic from '../../hooks/useAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 import useAuth from '../../hooks/useAuth';
 
 
 
 const SignUp = () => {
-//     const axiosPublic = useAxiosPublic();
+    const axiosPublic = useAxiosPublic();
     const { createUser, googleSignIn, updateUserProfile } = useAuth();
     const {
         register,
@@ -28,7 +28,7 @@ const SignUp = () => {
 
     const onSubmit = (data) => {
 
-        // console.log(data.email, data.password);
+        console.log(data.email, data.password);
 
         createUser(data.email, data.password)
             .then((result) => {
@@ -39,7 +39,10 @@ const SignUp = () => {
                         // create user entry in the data base
                         const userInfo = {
                             name: data.name,
-                            email: data.email
+                            email: data.email,
+                            photoURL: data.photoURL,
+                            badge: 'Bronze'
+
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {

@@ -5,11 +5,13 @@ import useAxiosPublic from '../hooks/useAxiosPublic';
 
 export const AuthContext = createContext(null);
 const provider = new GoogleAuthProvider();
+
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
+    const [searchTerm, setSearchTerm] = useState('');
     const axiosPublic = useAxiosPublic();
 
     const createUser = (email, password) => {
@@ -22,7 +24,7 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const updateUserProfile = (name , photo) => {
+    const updateUserProfile = (name, photo) => {
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
         })
@@ -37,26 +39,30 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
+    const setSearch = (term) => {
+        setSearchTerm(term);
+    };
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            if(currentUser){
+            if (currentUser) {
                 // get token and store client
-                const userInfo = {email: currentUser.email};
+                const userInfo = { email: currentUser.email };
                 axiosPublic.post('/jwt', userInfo)
-                .then(res => {
-                    if(res.data.token){
-                        localStorage.setItem('access-token', res.data.token);
-                        setLoading(false);
-                    }
-                })
+                    .then(res => {
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token);
+                            setLoading(false);
+                        }
+                    })
             }
-            else{
+            else {
                 // TODO: remove token (if token stored in the client side: Local storage , caching, in memory)
                 localStorage.removeItem('access-token');
                 setLoading(false);
             }
-            
+
         });
         return () => {
             return unsubscribe();
@@ -70,7 +76,9 @@ const AuthProvider = ({ children }) => {
         updateUserProfile,
         googleSignIn,
         signIn,
-        logOut
+        logOut,
+        searchTerm,
+        setSearch,
     }
 
     return (

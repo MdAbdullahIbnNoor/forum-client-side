@@ -1,41 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import PostCard from './PostCard';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
+import useAuth from '../../../hooks/useAuth';
 
 const PostSection = () => {
+  const { searchTerm } = useAuth();
+  const axiosPublic = useAxiosPublic();
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOption, setSortOption] = useState('latest'); // Default sort option
   const postsPerPage = 5;
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+
       try {
-        const response = await fetch('post.json');
-        const data = await response.json();
-
-        // Sort posts based on the current sort option
-        const sortedPosts = sortPosts(data, sortOption);
-
-        setPosts(sortedPosts);
+        const response = await axiosPublic.get(`/posts?sortOption=${sortOption}&searchTerm=${searchTerm}`);
+        setPosts(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, [sortOption]); // Update posts when sort option changes
-
-  // Function to sort posts based on different options
-  const sortPosts = (posts, option) => {
-    switch (option) {
-      case 'latest':
-        return posts.sort((a, b) => new Date(b.time) - new Date(a.time));
-      case 'popularity':
-        return posts.sort((a, b) => (b.upVote - b.downVote) - (a.upVote - a.downVote));
-      default:
-        return posts;
-    }
-  };
+  }, [sortOption, searchTerm]); // Add searchTerm to the dependency array
 
   // Calculate the index of the last post on the current page
   const indexOfLastPost = currentPage * postsPerPage;
@@ -52,6 +44,10 @@ const PostSection = () => {
     setSortOption(option);
   };
 
+  if (loading) {
+    return <>its loading state</>;
+  }
+
   return (
     <section className="py-16">
       <div className="container mx-auto">
@@ -62,14 +58,14 @@ const PostSection = () => {
           <button
             onClick={() => handleSortBy('latest')}
             className={`mx-2 px-3 py-1 ${sortOption === 'latest' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-800'
-              } rounded-md focus:outline-none`}
+            } rounded-md focus:outline-none`}
           >
             Latest
           </button>
           <button
             onClick={() => handleSortBy('popularity')}
             className={`mx-2 px-3 py-1 ${sortOption === 'popularity' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-800'
-              } rounded-md focus:outline-none`}
+            } rounded-md focus:outline-none`}
           >
             Popularity
           </button>
@@ -87,8 +83,7 @@ const PostSection = () => {
             <button
               key={index + 1}
               onClick={() => paginate(index + 1)}
-              className={`mx-1 px-3 py-1 ${
-                currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-800'
+              className={`mx-1 px-3 py-1 ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-800'
               } rounded-md focus:outline-none`}
             >
               {index + 1}

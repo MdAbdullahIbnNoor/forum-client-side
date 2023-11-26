@@ -1,20 +1,20 @@
 import React from 'react';
-// import { BiLike } from "react-icons/bi";
-// import { BiSolidDislike } from "react-icons/bi";
-// import { FaShareSquare } from "react-icons/fa";
+import { BiLike } from "react-icons/bi";
+import { BiSolidDislike } from "react-icons/bi";
+import { FaShareSquare } from "react-icons/fa";
 
 const PostCard = ({ post }) => {
-    // const handleUpVote = () => {
-    //     // Handle upvote logic
-    // };
+    const handleUpVote = () => {
+        // Handle upvote logic
+    };
 
-    // const handleDownVote = () => {
-    //     // Handle downvote logic
-    // };
+    const handleDownVote = () => {
+        // Handle downvote logic
+    };
 
-    // const handleShare = () => {
-    //     // Handle share logic
-    // };
+    const handleShare = () => {
+        // Handle share logic
+    };
 
     return (
         <div className="card card-side bg-white shadow-xl h-64">
@@ -38,14 +38,12 @@ const PostCard = ({ post }) => {
                 {/* Tags, Time, Comments Count, and Votes Count */}
                 <div className="flex flex-col items-start justify-between text-sm text-gray-100 mb-1">
                     <div className="flex items-center space-x-2 mb-2">
-                        {post.tags.map(tag => (
-                            <span key={tag} className="bg-sky-500 px-2 py-1 rounded">
-                                {tag}
-                            </span>
-                        ))}
+                        <span className="bg-sky-500 px-2 py-1 rounded">
+                            {post.tags}
+                        </span>
                     </div>
                     <div className='text-gray-600 flex'>
-                        <p className="mr-2 font-medium">Date: <span className='text-sky-400 font-medium text-base'>{post.time.slice(0,9)}</span></p>
+                        <p className="mr-2 font-medium">Date: <span className='text-sky-400 font-medium text-base'>{post.time.slice(0, 9)}</span></p>
                         <p className="mr-2 font-medium">Comments: <span className='text-sky-400 font-medium text-base'>{post.commentsCount}</span></p>
                         <p className="ml-2 font-medium">Votes: <span className='text-sky-400 font-medium text-base'>{post.upVote - post.downVote}</span></p>
                     </div>

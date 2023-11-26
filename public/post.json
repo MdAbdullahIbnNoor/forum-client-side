@@ -1,386 +1,338 @@
 [
     {
-        "_id": "1",
         "author": {
             "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "John Doe"
+            "name": "John Doe",
+            "email": "john.doe@mail.com"
         },
         "title": "Code Masterpiece",
         "description": "Explore the world of coding with this amazing post.",
-        "tags": [
-            "Code"
-        ],
+        "tags": "Code",
         "time": "2023-11-23T10:30:00Z",
-        "upVote": 15,
-        "downVote": 3,
-        "commentsCount": 8
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "2",
         "author": {
             "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Jane Smith"
+            "name": "Jane Smith",
+            "email": "jane.smith@mail.com"
         },
         "title": "WebDev Wonders",
         "description": "Dive into the world of web development with this exciting post.",
-        "tags": [
-            "WebDev"
-        ],
+        "tags": "WebDev",
         "time": "2023-11-22T15:45:00Z",
-        "upVote": 20,
-        "downVote": 5,
-        "commentsCount": 12
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "3",
         "author": {
             "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Elena Rodriguez"
+            "name": "Elena Rodriguez",
+            "email": "elena@mail.com"
         },
         "title": "AI Marvels",
         "description": "Discover the wonders of Artificial Intelligence in this intriguing post.",
-        "tags": [
-            "AI"
-        ],
+        "tags": "AI",
         "time": "2023-11-21T12:15:00Z",
-        "upVote": 18,
-        "downVote": 2,
-        "commentsCount": 10
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "4",
         "author": {
             "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Chris Johnson"
+            "name": "Chris Johnson",
+            "email": "chris.john@mail.com"
         },
         "title": "ML Explorations",
         "description": "Embark on a journey through the fascinating world of Machine Learning.",
-        "tags": [
-            "ML"
-        ],
+        "tags": "ML",
         "time": "2023-11-20T09:45:00Z",
-        "upVote": 22,
-        "downVote": 4,
-        "commentsCount": 15
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "5",
         "author": {
             "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Mia Brown"
+            "name": "Mia Brown",
+            "email": "mia.brown@mail.com"
         },
         "title": "Security Insights",
         "description": "Uncover the latest insights into the realm of cybersecurity in this post.",
-        "tags": [
-            "Security"
-        ],
+        "tags": "Security",
         "time": "2023-11-19T16:30:00Z",
-        "upVote": 25,
-        "downVote": 6,
-        "commentsCount": 18
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "6",
         "author": {
             "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "James Wilson"
+            "name": "James Wilson",
+            "email": "james.wilson@mail.com"
         },
         "title": "Data Insights",
         "description": "Dive deep into the world of data with this insightful post.",
-        "tags": [
-            "Data"
-        ],
+        "tags": "Data",
         "time": "2023-11-18T14:20:00Z",
-        "upVote": 17,
-        "downVote": 3,
-        "commentsCount": 11
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "7",
         "author": {
             "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Sophia Miller"
+            "name": "Sophia Miller",
+            "email": "shophia@mail.com"
         },
         "title": "Cloud Chronicles",
         "description": "Explore the latest developments in cloud technology in this intriguing post.",
-        "tags": [
-            "Cloud"
-        ],
+        "tags": "Cloud",
         "time": "2023-11-17T11:10:00Z",
-        "upVote": 19,
-        "downVote": 4,
-        "commentsCount": 14
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "8",
         "author": {
             "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Alex Turner"
+            "name": "Alex Turner",
+            "email": "alex@mail.com"
         },
         "title": "App Innovations",
         "description": "Get inspired by the latest innovations in app development.",
-        "tags": [
-            "Apps"
-        ],
+        "tags": "Apps",
         "time": "2023-11-16T09:00:00Z",
-        "upVote": 16,
-        "downVote": 2,
-        "commentsCount": 13
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "9",
         "author": {
             "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Olivia White"
+            "name": "Olivia White",
+            "email": "white.olivia@mail.com"
         },
         "title": "Blockchain Odyssey",
         "description": "Embark on an odyssey through the blockchain landscape with this post.",
-        "tags": [
-            "Blockchain"
-        ],
+        "tags": "Blockchain",
         "time": "2023-11-15T16:45:00Z",
-        "upVote": 21,
-        "downVote": 3,
-        "commentsCount": 17
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "10",
         "author": {
             "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Ethan Davis"
+            "name": "Ethan Davis",
+            "email": "ethan@mail.com"
         },
         "title": "Tech Marvels",
         "description": "Explore the marvels of technology in this captivating post.",
-        "tags": [
-            "Tech"
-        ],
+        "tags": "Tech",
         "time": "2023-11-14T13:30:00Z",
-        "upVote": 23,
-        "downVote": 5,
-        "commentsCount": 16
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "11",
         "author": {
             "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Alice Johnson"
+            "name": "Alice Johnson",
+            "email": "alice.johnsom@mail.com"
         },
         "title": "Mastering Code 3",
         "description": "Unlock the secrets of coding with this in-depth post.",
-        "tags": [
-            "Code"
-        ],
+        "tags": "Code",
         "time": "2023-11-20T14:15:00Z",
-        "upVote": 25,
-        "downVote": 4,
-        "commentsCount": 10
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "12",
         "author": {
             "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Robert Turner"
+            "name": "Robert Turner",
+            "email": "robert_t@mail.com"
         },
         "title": "WebDev Wonders 4",
         "description": "Dive into the latest trends and wonders of web development.",
-        "tags": [
-            "WebDev"
-        ],
+        "tags": "WebDev",
         "time": "2023-11-19T18:30:00Z",
-        "upVote": 18,
-        "downVote": 2,
-        "commentsCount": 15
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "13",
         "author": {
             "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Eva Martinez"
+            "name": "Eva Martinez",
+            "email": "eva@mail.com"
         },
         "title": "AI Insights 5",
         "description": "Explore the fascinating world of artificial intelligence.",
-        "tags": [
-            "AI"
-        ],
+        "tags": "AI",
         "time": "2023-11-18T12:45:00Z",
-        "upVote": 22,
-        "downVote": 6,
-        "commentsCount": 8
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "14",
         "author": {
             "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Chris Baker"
+            "name": "Chris Baker",
+            "email": "chris.john@mail.com"
         },
         "title": "ML Marvels 6",
         "description": "Dive into the marvels and wonders of machine learning.",
-        "tags": [
-            "ML"
-        ],
+        "tags": "ML",
         "time": "2023-11-17T08:20:00Z",
-        "upVote": 30,
-        "downVote": 3,
-        "commentsCount": 13
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "15",
         "author": {
             "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Olivia Foster"
+            "name": "Olivia Foster",
+            "email": "olivia.foster@mail.com"
         },
         "title": "Security Chronicles 7",
         "description": "Explore the latest developments and stories in cybersecurity.",
-        "tags": [
-            "Security"
-        ],
+        "tags": "Security",
         "time": "2023-11-16T16:55:00Z",
-        "upVote": 15,
-        "downVote": 1,
-        "commentsCount": 20
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "16",
         "author": {
             "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Daniel Lee"
+            "name": "Daniel Lee",
+            "email": "lee@mail.com"
         },
         "title": "Data Insights 8",
         "description": "Delve into the world of data with these insightful observations.",
-        "tags": [
-            "Data"
-        ],
+        "tags": "Data",
         "time": "2023-11-15T09:10:00Z",
-        "upVote": 17,
-        "downVote": 5,
-        "commentsCount": 18
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "17",
         "author": {
             "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Sophia Reynolds"
+            "name": "Sophia Reynolds",
+            "email": "sophia.reynolds@mail.com"
         },
         "title": "Cloud Journeys 9",
         "description": "Embark on cloud journeys and discover the possibilities.",
-        "tags": [
-            "Cloud"
-        ],
+        "tags": "Cloud",
         "time": "2023-11-14T13:25:00Z",
-        "upVote": 28,
-        "downVote": 4,
-        "commentsCount": 16
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "18",
         "author": {
             "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "David Turner"
+            "name": "David Turner",
+            "email": "david.turner@mail.com"
         },
         "title": "App Adventures 10",
         "description": "Embark on exciting adventures in the world of app development.",
-        "tags": [
-            "Apps"
-        ],
+        "tags": "Apps",
         "time": "2023-11-13T17:40:00Z",
-        "upVote": 24,
-        "downVote": 2,
-        "commentsCount": 14
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "19",
         "author": {
             "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Emily Thompson"
+            "name": "Emily Thompson",
+            "email": "emily@mail.com"
         },
         "title": "Blockchain Explorations 11",
         "description": "Embark on a journey to explore the wonders of blockchain technology.",
-        "tags": [
-            "Blockchain"
-        ],
+        "tags": "Blockchain",
         "time": "2023-11-12T12:55:00Z",
-        "upVote": 19,
-        "downVote": 6,
-        "commentsCount": 22
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "20",
         "author": {
             "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Ethan Wilson"
+            "name": "Ethan Wilson",
+            "email": "ethan@mail.com"
         },
         "title": "Security Spotlight 20",
         "description": "Explore the latest security trends and stay informed.",
-        "tags": [
-            "Security"
-        ],
+        "tags": "Security",
         "time": "2023-11-07T22:10:00Z",
-        "upVote": 25,
-        "downVote": 4,
-        "commentsCount": 15
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "21",
         "author": {
             "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Olivia Smith"
+            "name": "Olivia Smith",
+            "email": "olivia.foster@mail.com"
         },
         "title": "Data Discoveries 21",
         "description": "Discover new insights into the fascinating world of data.",
-        "tags": [
-            "Data"
-        ],
+        "tags": "Data",
         "time": "2023-11-06T02:25:00Z",
-        "upVote": 19,
-        "downVote": 2,
-        "commentsCount": 13
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "22",
         "author": {
             "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Lucas Miller"
+            "name": "Lucas Miller",
+            "email": "miller@mail.com"
         },
         "title": "Cloud Chronicles 22",
         "description": "Embark on a journey through the fascinating world of cloud technology.",
-        "tags": [
-            "Cloud"
-        ],
+        "tags": "Cloud",
         "time": "2023-11-05T06:40:00Z",
-        "upVote": 27,
-        "downVote": 3,
-        "commentsCount": 19
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "23",
         "author": {
             "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "Mia Davis"
+            "name": "Mia Davis",
+            "email": "mia.brown@mail.com"
         },
         "title": "Apps Amazement 23",
         "description": "Get amazed by the latest and greatest in the world of apps.",
-        "tags": [
-            "Apps"
-        ],
+        "tags": "Apps",
         "time": "2023-11-04T10:55:00Z",
-        "upVote": 22,
-        "downVote": 1,
-        "commentsCount": 17
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     },
     {
-        "_id": "24",
         "author": {
             "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "name": "James Turner"
+            "name": "James Turner",
+            "email": "james.wilson@mail.com"
         },
         "title": "Blockchain Buzz 24",
         "description": "Dive into the buzzing world of blockchain technology.",
-        "tags": [
-            "Blockchain"
-        ],
+        "tags": "Blockchain",
         "time": "2023-11-03T15:10:00Z",
-        "upVote": 18,
-        "downVote": 5,
-        "commentsCount": 14
+        "upVote": 0,
+        "downVote": 0,
+        "commentsCount": 0
     }
 ]
