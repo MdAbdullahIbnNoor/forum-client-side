@@ -15,63 +15,60 @@ const Dashboard = () => {
     // const [isAdmin] = useAdmin();
     return (
         <div className='flex py-16 '>
-            <div className="w-72 min-h-[850px] bg-amber-500">
+            <div className="w-60 min-h-[850px] bg-gray-700 rounded-s-2xl text-sky-500">
                 {/* side bar */}
-                <ul className='menu '>
+                <ul className='menu'>
                         {/* // isAdmin ?
                         // <>
-                        //     <li className='px-3 py-2 text-lg font-medium'>
+                        //     <li className='px-2 py-2 text-base  font-medium'>
                         //         <NavLink to='/dashboard/adminHome'><FaHome /> Admin Home</NavLink>
                         //     </li>
-                        //     <li className='px-3 py-2 text-lg font-medium'>
+                        //     <li className='px-2 py-2 text-base  font-medium'>
                         //         <NavLink to='/dashboard/addItems'><ImSpoonKnife />Add Items</NavLink>
                         //     </li>
-                        //     <li className='px-3 py-2 text-lg font-medium'>
+                        //     <li className='px-2 py-2 text-base  font-medium'>
                         //         <NavLink to='/dashboard/manageItems'><FaList /> Manage Items</NavLink>
                         //     </li>
-                        //     <li className='px-3 py-2 text-lg font-medium'>
+                        //     <li className='px-2 py-2 text-base  font-medium'>
                         //         <NavLink to='/dashboard/bookings'><FaBook /> Manage Bookings</NavLink>
                         //     </li>
-                        //     <li className='px-3 py-2 text-lg font-medium'>
+                        //     <li className='px-2 py-2 text-base  font-medium'>
                         //         <NavLink to='/dashboard/users'><FaUsers /> All Users</NavLink>
                         //     </li>
                         // </>
                         // : */}
-                    <li className='px-3 py-2 text-lg font-medium'>
+                    <li className='px-2 py-2 text-base  font-medium'>
                         <NavLink to='/dashboard/userHome'><FaHome /> User Home</NavLink>
                     </li>
-                    <li className='px-3 py-2 text-lg font-medium'>
+                    <li className='px-2 py-2 text-base  font-medium'>
                         <NavLink to='/dashboard/profile'><FaUser /> Profile</NavLink>
                     </li>
-                    <li className='px-3 py-2 text-lg font-medium'>
-                        <NavLink to='/dashboard/cart'><BsCart3 /> My Cart()</NavLink>
+                    <li className='px-2 py-2 text-base  font-medium'>
+                        <NavLink to='/dashboard/myPost'><BsCart3 /> My Post()</NavLink>
                     </li>
-                    <li className='px-3 py-2 text-lg font-medium'>
-                        <NavLink to='/dashboard/review'><FaAd /> Add a Review</NavLink>
-                    </li>
-                    <li className='px-3 py-2 text-lg font-medium'>
-                        <NavLink to='/dashboard/paymentHistory'><FaListAlt /> Real Payment History</NavLink>
+                    <li className='px-2 py-2 text-base  font-medium'>
+                        <NavLink to='/dashboard/addPost'><FaAd /> Add a Post</NavLink>
                     </li>
 
                     {/* Shered links */}
                     <div className='divider px-4'></div>
 
-                    <li className='px-3 py-2 text-lg font-medium'>
+                    <li className='px-2 py-2 text-base  font-medium'>
                         <NavLink to='/'><FaHome />Home</NavLink>
                     </li>
-                    <li className='px-3 py-2 text-lg font-medium'>
+                    <li className='px-2 py-2 text-base  font-medium'>
                         <NavLink to='/order/salad'><FaSearch />Menu</NavLink>
                     </li>
-                    <li className='px-3 py-2 text-lg font-medium'>
+                    <li className='px-2 py-2 text-base  font-medium'>
                         <NavLink to='/order/contact'><FaEnvelope />Contact</NavLink>
                     </li>
-                    <li className='px-3 py-2 text-lg font-medium'>
+                    <li className='px-2 py-2 text-base  font-medium'>
                         <NavLink to='/order/salad'><FaSearch />Menu</NavLink>
                     </li>
                 </ul>
             </div>
             {/* dashboard content */}
-            <div className="flex-1 px-16 py-10 bg-amber-50">
+            <div className="flex-1 px-16 py-10 bg-sky-100">
                 <Outlet></Outlet>
             </div>
         </div>

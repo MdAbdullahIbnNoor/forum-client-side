@@ -9,6 +9,7 @@ import DetailedPost from "../Pages/DetailedPost/DetailedPost";
 import Membership from "../Pages/Membership/Membership";
 import Dashboard from "../Layout/Dashboard";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import AddPost from "../Pages/Dashboard/AddPost/AddPost";
 
 export const router = createBrowserRouter([
     {
@@ -42,14 +43,14 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
         children: [
             // Normal user routes
-            // {
-            //     path: 'profile',
-            //     element: <Profile />
-            // },
-            // {
-            //     path: 'paymentHistory',
-            //     element: <PaymentHistory />
-            // },
+            {
+                path: 'profile',
+                element: <Profile />
+            },
+            {
+                path: 'addPost',
+                element: <AddPost />
+            },
             // {
             //     path: 'payment',
             //     element: <Payment />
