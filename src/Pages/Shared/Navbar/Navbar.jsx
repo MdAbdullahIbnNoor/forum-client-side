@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-// import { CgLogOut } from 'react-icons/cg';
 import logo from '../../../assets/logo.png';
 // import avatar from '../../../assets/avatar.png';
 import useAuth from '../../../hooks/useAuth';
 import { IoIosNotifications } from "react-icons/io";
+import useAnnouncements from '../../../hooks/useAnnouncements';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logOut } = useAuth();
+  const { announcements, loading } = useAnnouncements();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -98,10 +99,10 @@ const Navbar = () => {
                 Membership
               </NavLink>
               <NavLink
-                to="/notifications"
+                to="#"
                 className="px-3 py-1 w-16 btn btn-circle btn-info btn-outline mx-2 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 relative"
               >
-                <IoIosNotifications className='text-2xl hover:text-gray-100' /><p className='absolute top-2 right-4 text-red-600 font-bold'>0</p>
+                <IoIosNotifications className='text-2xl hover:text-gray-100' /><p className='absolute top-2 right-4 text-red-600 font-bold'>{announcements.length}</p>
               </NavLink>
               {user ? (
                 <div className="relative">

@@ -29,8 +29,9 @@ export const router = createBrowserRouter([
                 element: <SignUp />
             },
             {
-                path: "detailedPost",
-                element: <DetailedPost />
+                path: 'detailedPost/:id',
+                element: <DetailedPost />,
+                loader: ({params}) => fetch(`http://localhost:5000/detailedPost/${params.id}`)
             },
             {
                 path: "membership",
