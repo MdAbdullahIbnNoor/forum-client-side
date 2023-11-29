@@ -36,20 +36,34 @@ const DetailedPost = () => {
 
     const handleAction = async (actionType) => {
         try {
-            const updatedData = {
-                upVote: actionType === 'upvote' ? post.upVote + 1 : post.upVote,
-                downVote: actionType === 'downvote' ? post.downVote + 1 : post.downVote,
-                commentsCount: actionType === 'comment' ? count + 1 : post.commentsCount, // Update commentsCount using count
-            };
+            let updatedData;
 
-            console.log(updatedData);
-            // const response = await axiosPublic.patch(`/posts/${post._id}`, updatedData);
-            // console.log(response.data);
+            if (actionType === 'upvote') {
+                updatedData = {
+                    upVote: post.upVote + 1,
+                    downVote: post.downVote, // No change in downVote
+                };
+            } else if (actionType === 'downvote') {
+                updatedData = {
+                    upVote: post.upVote, // No change in upVote
+                    downVote: post.downVote + 1,
+                };
+            }
+            // else if (actionType === 'comment') {
+            //     updatedData = {
+            //         upVote: post.upVote, // No change in upVote
+            //         downVote: post.downVote, // No change in downVote
+            //         commentsCount: count + 1,
+            //     };
+            //     const response = await axiosPublic.patch(`/posts/${post._id}`, updatedData);
+            // }
+
+            const response = await axiosPublic.patch(`/posts/${post._id}`, updatedData);
 
             // Fetch updated post data after action
             fetchData();
         } catch (error) {
-            // console.error('Error updating data:', error);
+            console.error('Error updating data:', error);
         }
     };
 
@@ -76,17 +90,22 @@ const DetailedPost = () => {
             const response = await axiosPublic.post('/comments', newComment);
             console.log(response.data);
 
-            // Fetch updated post data after adding a comment
-            fetchData();
-            setCount((prevCount) => prevCount + 1); // Increment count and update commentsCount
-            setComment('');
+            const response2 = await axiosPublic.patch(`/posts/comment-increment/${post._id}`);
+            console.log(response2.data);
+
+            if (response2.status >= 200 && response2.status < 300) {
+                // Fetch updated post data after adding a comment
+                fetchData();
+                setComment('');
+            } else {
+                // Handle non-success status codes
+                console.error('Error updating commentsCount:', response2.status, response2.statusText);
+            }
         } catch (error) {
             console.error('Error submitting comment:', error);
         }
     };
 
-    // console.log(comment);
-    // console.log(count);
 
     const formatDateTime = (dateTimeString) => {
         const options = {
@@ -176,8 +195,8 @@ const DetailedPost = () => {
                 <div className="mb-8">
                     <h3 className="text-xl font-bold mb-4 text-sky-400">Comments</h3>
                     <ul>
-                        {comments.map((comment) => (
-                            <li key={comment._id} className="mb-4">
+                        {comments.map((comment, idx) => (
+                            <li key={idx} className="mb-4">
                                 <p className=" font-bold text-gray-50">{comment.userEmail}</p>
                                 <p className="text-gray-100">{comment.comment}</p>
                             </li>

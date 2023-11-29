@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Select from 'react-select';
-import { FaAd, FaUtensils } from 'react-icons/fa';
 import useAuth from '../../../hooks/useAuth';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const AddPost = () => {
     const { user } = useAuth();
     const { register, handleSubmit, reset, setValue } = useForm();
     const [userPostCount, setUserPostCount] = useState(0);
     const [showForm, setShowForm] = useState(true);
+    const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
         // Fetch user's post count from the API
@@ -24,23 +25,30 @@ const AddPost = () => {
     }, []);
 
     const onSubmit = async (data) => {
-        // Add default values and additional data
         const postData = {
-            ...data,
+            author: {
+                name: user.displayName,
+                email: user.email,
+                image: user.photoURL,
+            },
+            title: data.postTitle,
+            description: data.postDescription,
+            tags: data.tag.value,
+            time: new Date(data.date).toISOString(),
             upVote: 0,
             downVote: 0,
-            authorName: user.displayName,
-            photoUrl: user.photoURL,
-            email: user.email,
-            date: data.date, // Add the actual date from the form
-            time: new Date().toLocaleTimeString(), // Capture the current time
+            commentsCount: 0,
         };
 
-        // Handle form submission logic
-        console.log(postData);
-
-        // Reset the form after submission
-        reset();
+        try {
+            const response = await axiosSecure.post('/posts', postData);
+            console.log('Post added successfully. Post ID:', response.data.postId);
+            // You can handle success (e.g., show a success message)
+            reset();
+        } catch (error) {
+            console.error('Error adding post:', error);
+            // You can handle errors (e.g., show an error message)
+        }
     };
 
     const redirectToMembership = () => {

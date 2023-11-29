@@ -45,7 +45,7 @@ const PostSection = () => {
   };
 
   if (loading) {
-    return <>its loading state</>;
+    return <p className='text-2xl mx-[600px] my-72 text-info font-bold uppercase'>its loading state........</p>;
   }
 
   return (
