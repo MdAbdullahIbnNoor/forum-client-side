@@ -46,10 +46,10 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
         children: [
             // Normal user routes
-            // {
-            //     path: 'profile',
-            //     element: <Profile />
-            // },
+            {
+                path: 'profile',
+                element: <Profile />
+            },
             {
                 path: 'myPost',
                 element: <MyPost />

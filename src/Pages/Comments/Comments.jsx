@@ -32,6 +32,7 @@ const Comments = () => {
                 const reportData = {
                     postTitle,
                     userEmail: user.email, // Assuming user.email is available from useAuth
+                    commentId: selectedComment._id,
                     comment: selectedComment.comment,
                     feedback: selectedComment.feedback,
                     reporter: user.email,
@@ -104,7 +105,7 @@ const Comments = () => {
 
     return (
         <div>
-            <h2>Comments for Post ID: {postTitle}</h2>
+            <h2 className='text-3xl font-medium mb-10'>Comments for Post: <span className='text-info'>{postTitle}</span></h2>
             <div className="overflow-x-auto">
                 <table className="min-w-full rounded-3xl">
                     <colgroup>
