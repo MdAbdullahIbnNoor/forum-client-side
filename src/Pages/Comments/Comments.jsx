@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Modal from 'react-modal';
+import useAuth from '../../hooks/useAuth';
 
 const Comments = () => {
+    const { user } = useAuth();
     const { postTitle } = useParams();
     const axiosSecure = useAxiosSecure();
     const [comments, setComments] = useState([]);
@@ -23,15 +25,44 @@ const Comments = () => {
         fetchComments();
     }, [axiosSecure, postTitle]);
 
-    const handleReport = (commentId) => {
-        console.log(commentId);
+    const handleReport = async (commentId) => {
+        try {
+            const selectedComment = comments.find(comment => comment._id === commentId);
+            if (selectedComment && selectedComment.isReportButtonEnabled) {
+                const reportData = {
+                    postTitle,
+                    userEmail: user.email, // Assuming user.email is available from useAuth
+                    comment: selectedComment.comment,
+                    feedback: selectedComment.feedback,
+                    reporter: user.email,
+                };
+
+                // Send the report data to the server
+                await axiosSecure.post('/reports', reportData);
+
+                // Disable the Report button after reporting
+                setComments((prevComments) =>
+                    prevComments.map((comment) => {
+                        if (comment._id === commentId) {
+                            return {
+                                ...comment,
+                                isReportButtonEnabled: false,
+                            };
+                        }
+                        return comment;
+                    })
+                );
+
+                console.log('Report submitted successfully');
+            }
+        } catch (error) {
+            console.error('Error submitting report:', error);
+        }
     };
 
     const handleFeedbackChange = (e, commentId) => {
-        // Implement your logic to handle feedback change
         const selectedFeedback = e.target.value;
-    
-        // Find the comment and update its feedback and isReportButtonEnabled
+
         setComments((prevComments) =>
             prevComments.map((comment) => {
                 if (comment._id === commentId) {
@@ -44,13 +75,11 @@ const Comments = () => {
                 return comment;
             })
         );
-    
-        // You may want to update the server with the feedback for the corresponding comment
+
         console.log(`Feedback changed to ${selectedFeedback} for comment ID ${commentId}`);
     };
 
     const renderCommentText = (commentText) => {
-        // Display up to 20 characters, add Read More link if needed
         if (commentText.length > 20) {
             return (
                 <>
@@ -119,7 +148,6 @@ const Comments = () => {
                 </table>
             </div>
 
-            {/* React Modal for displaying full comment */}
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
