@@ -35,7 +35,7 @@ const PostCard = ({ post }) => {
 
                     {/* Post Content */}
                     <h2 className="card-title text-2xl font-semibold mb-1">{post.title}</h2>
-                    <p className="text-gray-600 mb-1">{post.description}</p>
+                    <p className="text-gray-600 mb-1">{post.description.slice(0, 70)}</p>
 
                     {/* Tags, Time, Comments Count, and Votes Count */}
                     <div className="flex flex-col items-start justify-between text-sm text-gray-100 mb-1">

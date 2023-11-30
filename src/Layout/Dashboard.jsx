@@ -37,9 +37,9 @@ const Dashboard = () => {
                         //     </li>
                         // </>
                         // : */}
-                    <li className='px-2 py-2 text-base  font-medium'>
+                    {/* <li className='px-2 py-2 text-base  font-medium'>
                         <NavLink to='/dashboard/userHome'><FaHome /> User Home</NavLink>
-                    </li>
+                    </li> */}
                     <li className='px-2 py-2 text-base  font-medium'>
                         <NavLink to='/dashboard/profile'><FaUser /> Profile</NavLink>
                     </li>

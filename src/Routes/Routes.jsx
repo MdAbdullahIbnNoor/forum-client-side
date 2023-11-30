@@ -10,6 +10,8 @@ import Membership from "../Pages/Membership/Membership";
 import Dashboard from "../Layout/Dashboard";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import AddPost from "../Pages/Dashboard/AddPost/AddPost";
+import MyPost from "../Pages/Dashboard/MyPost/MyPost";
+import Comments from "../Pages/Comments/Comments";
 
 export const router = createBrowserRouter([
     {
@@ -31,7 +33,7 @@ export const router = createBrowserRouter([
             {
                 path: 'detailedPost/:id',
                 element: <DetailedPost />,
-                loader: ({params}) => fetch(`http://localhost:5000/detailedPost/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/detailedPost/${params.id}`)
             },
             {
                 path: "membership",
@@ -44,13 +46,21 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
         children: [
             // Normal user routes
+            // {
+            //     path: 'profile',
+            //     element: <Profile />
+            // },
             {
-                path: 'profile',
-                element: <Profile />
+                path: 'myPost',
+                element: <MyPost />
             },
             {
                 path: 'addPost',
                 element: <AddPost />
+            },
+            {
+                path: 'comments/:postTitle', // New route for Comments page
+                element: <Comments />
             },
             // {
             //     path: 'payment',

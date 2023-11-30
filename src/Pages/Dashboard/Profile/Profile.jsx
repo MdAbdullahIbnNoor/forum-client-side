@@ -5,13 +5,15 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const Profile = () => {
   const { user } = useAuth();
-  const [badge, isMemberLoading, refetch] = useMember();
+  const [memberData, isMemberLoading, refetch] = useMember();
   const axiosSecure = useAxiosSecure();
   const [userPosts, setUserPosts] = useState([]);
 
+  const { badge } = memberData || {};
   // Function to handle refetching
   const handleRefetch = async () => {
     // Optionally, you can manually trigger a refetch using the refetch function
+    // console.log("in profile the badge is : ", badge);
     await refetch();
   };
 
@@ -46,9 +48,9 @@ const Profile = () => {
       ) : (
         <div className="my-profile-dashboard">
           <div className="profile-info relative">
-            <img src={user?.photoURL} alt="Profile" className="w-36 h-36 rounded-full mb-8" />
-            <p className={`badge font-medium absolute top-2 -left-0 ${badge ? 'bg-amber-600' : 'bg-amber-400'} text-white px-4 py-2 rounded-xl w-fit`}>
-              {badge ? 'Gold' : 'Bronze'}
+            <img src={user?.photoURL} alt="Profile" className="w-36 h-36 rounded-full mb-8 object-cover" />
+            <p className={`badge font-medium absolute top-2 -left-0 bg-amber-600 text-white px-4 py-2 rounded-xl w-fit`}>
+              {badge}
             </p>
             <h2 className="text-2xl font-bold">Name: {user?.displayName}</h2>
             <p className="text-lg font-medium text-gray-500">email: {user?.email}</p>

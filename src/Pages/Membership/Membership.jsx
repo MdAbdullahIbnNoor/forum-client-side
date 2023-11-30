@@ -10,7 +10,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 
 const Membership = () => {
     const queryClient = useQueryClient();
-    const [badge, isMemberLoading, refetch] = useMember();
+    const [data, isMemberLoading, refetch] = useMember(); // Corrected destructuring
     const { user } = useAuth();
 
     const handleRefetch = async () => {
@@ -23,7 +23,7 @@ const Membership = () => {
             <h2 className="text-3xl font-semibold mb-4">Membership Page</h2>
             {isMemberLoading ? (
                 <span className="loading loading-lg loading-spinner text-info mx-96"></span>
-            ) : badge === 'Gold' ? (
+            ) : data.badge === 'Gold' ? ( // Access data.badge
                 <p className="text-green-600 text-4xl text-center my-56 font-bold">You are already a member. Thank you for your support!</p>
             ) : (
                 <Elements stripe={stripePromise}>

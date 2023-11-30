@@ -3,33 +3,38 @@ import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import useMember from '../../../hooks/useMember';
+import { Link } from 'react-router-dom';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
 const AddPost = () => {
     const { user } = useAuth();
     const { register, handleSubmit, reset, setValue } = useForm();
-    const [userPostCount, setUserPostCount] = useState(0);
     const [showForm, setShowForm] = useState(true);
     const axiosSecure = useAxiosSecure();
+    const [data, isMemberLoading, refetch] = useMember();
 
     useEffect(() => {
-        // Fetch user's post count from the API
-        // Replace the following line with your actual API call
-        const fetchUserPostCount = async () => {
-            // const userPostCount = await api.getUserPostCount();
-            const userPostCount = 2; // Replace with the actual count from the API response
-            setUserPostCount(userPostCount);
-            setShowForm(userPostCount < 5);
-        };
+        if (!isMemberLoading && data) {
+            const { badge, postCount } = data;
 
-        fetchUserPostCount();
-    }, []);
+            console.log('Badge in Add Post:', badge);
+            console.log('Post Count in Add Post:', postCount);
+
+            // Adjust the logic based on your membership criteria
+            setShowForm(badge === 'Gold' || postCount < 5);
+            console.log('Badge in Add Post:', badge);
+
+        }
+    }, [isMemberLoading, data]);
+
 
     const onSubmit = async (data) => {
         const postData = {
             author: {
-                name: user.displayName,
-                email: user.email,
-                image: user.photoURL,
+                name: user?.displayName,
+                email: user?.email,
+                image: user?.photoURL,
             },
             title: data.postTitle,
             description: data.postDescription,
@@ -41,26 +46,32 @@ const AddPost = () => {
         };
 
         try {
+            // Check membership status again before posting
+            const updatedData = await refetch();
+            const { badge, postCount } = updatedData;
+
+            // Adjust the logic based on your membership criteria
+            setShowForm(badge === 'Gold' || postCount < 5);
+
             const response = await axiosSecure.post('/posts', postData);
-            console.log('Post added successfully. Post ID:', response.data.postId);
-            // You can handle success (e.g., show a success message)
+            console.log('Post added successfully:', response.data);
+            refetch();
             reset();
         } catch (error) {
             console.error('Error adding post:', error);
-            // You can handle errors (e.g., show an error message)
         }
-    };
-
-    const redirectToMembership = () => {
-        // Redirect to the Membership Page
-        // Replace the following line with your actual route for the Membership Page
-        // history.push('/membership');
-        console.log('Redirect to Membership Page');
     };
 
     const tags = ['Code', 'WebDev', 'AI', 'ML', 'Security', 'Data', 'Cloud', 'Apps', 'Blockchain'];
 
     const tagOptions = tags.map((tag) => ({ value: tag, label: tag }));
+
+    if (isMemberLoading) {
+        // You can add a loading spinner or other UI while checking the member status
+        return <p>Loading...</p>;
+    }
+
+    console.log("Show Form Data: ", showForm);
 
     return (
         <div>
@@ -113,12 +124,13 @@ const AddPost = () => {
                 ) : (
                     <div>
                         <p>You have reached the maximum post limit. Become a member to add more posts.</p>
-                        <button
-                            onClick={redirectToMembership}
-                            className="btn bg-blue-500 text-white px-4 py-3 rounded-md hover:bg-blue-400 hover:text-gray-200"
-                        >
-                            Become a Member
-                        </button>
+                        <Link to='/membership'>
+                            <button
+                                className="btn bg-blue-500 text-white px-4 py-3 rounded-md hover:bg-blue-400 hover:text-gray-200"
+                            >
+                                Become a Member
+                            </button>
+                        </Link>
                     </div>
                 )}
             </div>

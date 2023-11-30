@@ -1,0 +1,45 @@
+[
+    {
+      "name": "John Doe",
+      "email": "john@mail.com",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "role": "user",
+      "badge": "bronze",
+      "postCount": 0
+    },
+    {
+      "name": "Emma Watson",
+      "email": "emma@mail.com",
+      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "role": "user",
+      "badge": "bronze",
+      "postCount": 0
+    },
+    {
+      "name": "Alex Cooper",
+      "email": "alex@mail.com",
+      "image": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "role": "user",
+      "badge": "gold",
+      "postount": 0
+    },
+    {
+      "name": "Mike Sidona",
+      "email": "mike@mail.com",
+      "image": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "role": "user",
+      "badge": "bronze",
+      "postCount": 0
+    },
+    {
+      "name": "Olivia White",
+      "email": "olivia@mail.com",
+      "image": "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "role": "user",
+      "badge": "bronze",
+      "postCount": 0
+    }
+  ]
+  
+
+// S@mp1eP#ss
