@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
 const TagSection = () => {
+  const [tags, setTags] = useState([]);
+  const axiosPublic = useAxiosPublic();
+
+    useEffect(() => {
+        const fetchTags = async () => {
+          try {
+            const response = await axiosPublic.get('/tags');
+            setTags(response.data);
+          } catch (error) {
+            console.error('Error fetching tags:', error);
+          }
+        };
+    
+        fetchTags();
+      }, [axiosPublic]);
   // Dummy data for tags
-  const tags = ['Code', 'WebDev', 'AI', 'ML', 'Security', 'Data', 'Cloud', 'Apps', 'Blockchain'];
 
   return (
     <section className="bg-gray-800 py-16 rounded-xl">
@@ -14,7 +29,7 @@ const TagSection = () => {
               key={index}
               className="bg-info text-white text-lg w-36 text-center p-2 rounded-full cursor-pointer hover:bg-sky-600 transition  justify-center items-center"
             >
-              {tag}
+              {tag.tag}
             </div>
           ))}
         </div>

@@ -11,8 +11,23 @@ const AddPost = () => {
     const { user } = useAuth();
     const { register, handleSubmit, reset, setValue } = useForm();
     const [showForm, setShowForm] = useState(true);
+    const [tags, setTags] = useState([]);
     const axiosSecure = useAxiosSecure();
     const [data, isMemberLoading, refetch] = useMember();
+    const axiosPublic = useAxiosPublic();
+
+    useEffect(() => {
+        const fetchTags = async () => {
+          try {
+            const response = await axiosPublic.get('/tags');
+            setTags(response.data);
+          } catch (error) {
+            console.error('Error fetching tags:', error);
+          }
+        };
+    
+        fetchTags();
+      }, [axiosPublic]);
 
     useEffect(() => {
         if (!isMemberLoading && data) {
@@ -62,9 +77,9 @@ const AddPost = () => {
         }
     };
 
-    const tags = ['Code', 'WebDev', 'AI', 'ML', 'Security', 'Data', 'Cloud', 'Apps', 'Blockchain'];
+    // const tags = ['Code', 'WebDev', 'AI', 'ML', 'Security', 'Data', 'Cloud', 'Apps', 'Blockchain'];
 
-    const tagOptions = tags.map((tag) => ({ value: tag, label: tag }));
+    const tagOptions = tags.map((tag) => ({ value: tag.tag, label: tag.tag }));
 
     if (isMemberLoading) {
         // You can add a loading spinner or other UI while checking the member status

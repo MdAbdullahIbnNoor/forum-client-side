@@ -4,7 +4,6 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
-import SignUp from "../Pages/Signup/Signup";
 import DetailedPost from "../Pages/DetailedPost/DetailedPost";
 import Membership from "../Pages/Membership/Membership";
 import Dashboard from "../Layout/Dashboard";
@@ -17,6 +16,7 @@ import AddAnnouncement from "../Pages/Dashboard/AddAnnouncement/AddAnnouncement"
 import AdminRoutes from "../providers/AdminRoutes";
 import ManageReports from "../Pages/Dashboard/ManageReports/ManageReports";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import SignUp from "../Pages/SignUp/SignUp";
 
 export const router = createBrowserRouter([
     {

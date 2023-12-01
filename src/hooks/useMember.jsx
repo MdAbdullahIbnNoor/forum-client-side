@@ -35,8 +35,8 @@ const useMember = () => {
     } // Add the missing closing parenthesis here
   });
 
-  // console.log(data);
-  // console.log(isMemberLoading);
+  console.log(data);
+  console.log(isMemberLoading);
 
   return [data, isMemberLoading, refetch];
 };
