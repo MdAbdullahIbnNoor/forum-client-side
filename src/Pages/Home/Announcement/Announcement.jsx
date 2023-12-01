@@ -33,12 +33,12 @@ const Announcement = () => {
         </div>
 
         {/* List of announcements */}
-        <div className="mt-10 grid grid-cols-2 gap-4">
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
           {loading ? (
             <p>Loading...</p>
           ) : (
             announcements.map((announcement) => (
-              <div key={announcement.id} className="p-6 border border-gray-300 bg-gray-700 rounded-xl flex gap-5">
+              <div key={announcement._id} className="p-6 border border-gray-300 bg-gray-700 rounded-xl flex gap-5">
                 <div className="flex flex-col items-center self-stretch justify-center w-1/4">
                   <img src={announcement.authorImage} className="h-14 w-14 rounded-full" alt="" />
                   <p className='text-white'>{announcement.authorName}</p>

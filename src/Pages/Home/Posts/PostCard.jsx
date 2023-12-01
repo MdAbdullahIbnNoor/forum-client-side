@@ -20,21 +20,21 @@ const PostCard = ({ post }) => {
     return (
         <Link to={`/detailedPost/${post._id}`} className="cursor-pointer">
             <div className="card card-side bg-white shadow-xl h-64">
-                <figure className='w-1/3'>
+                <figure className='w-1/4'>
                     <img
                         src={post.author.image}
                         alt={post.author.name}
                         className="w-full h-full object-cover rounded-t-md"
                     />
                 </figure>
-                <div className="card-body">
+                <div className="card-body w-3/4">
                     {/* Author Section */}
                     <div className="flex items-center">
                         <span className=" font-semibold text-xl text-sky-600">{post.author.name}</span>
                     </div>
 
                     {/* Post Content */}
-                    <h2 className="card-title text-2xl font-semibold mb-1">{post.title.slice(0, 25)}</h2>
+                    <h2 className="card-title text-2xl font-semibold mb-1">{post.title.slice(0, 20)}</h2>
                     <p className="text-gray-600 mb-1">{post.description.slice(0, 70)}</p>
 
                     {/* Tags, Time, Comments Count, and Votes Count */}

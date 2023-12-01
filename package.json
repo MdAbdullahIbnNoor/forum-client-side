@@ -22,10 +22,12 @@
     "react-dropdown-select": "^4.10.0",
     "react-hook-form": "^7.48.2",
     "react-icons": "^4.12.0",
+    "react-minimal-pie-chart": "^8.4.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.20.0",
     "react-select": "^5.8.0",
     "react-share": "^5.0.2",
+    "recharts": "^2.10.3",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.10.1"
   },
