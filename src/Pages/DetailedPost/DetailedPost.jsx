@@ -121,15 +121,15 @@ const DetailedPost = () => {
     };
 
     return (
-        <div className="container mx-auto bg-gray-700 py-20">
+        <div className="lg:max-w-screen-2xl bg-gray-700 py-20 lg:px-8">
             <div className="px-16">
                 {/* Post details */}
-                <div className="flex flex-row-reverse justify-center items-start pt-24 gap-10 placeholder:">
-                    <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-row-reverse justify-center items-start pt-24 gap-14">
+                    <div className="flex flex-col justify-center items-center w-1/4">
                         <img src={post.author?.image} alt="Blog post screenshot" className="object-cover h-20 w-20 rounded-full" />
                         <p className='text-white mt-3 text-xl font-serif font-semibold'>{post.author?.name}</p>
                     </div>
-                    <div className="flex-grow">
+                    <div className="w-3/4">
                         <h1 className="text-gray-100 text-4xl font-semibold">{post.title}</h1>
                         <p className="text-gray-400 mt-1 mb-4">{formatDateTime(post.time)}</p>
                         <p className="text-gray-100 text-lg mt-7">{post.description}</p>
