@@ -17,6 +17,7 @@ import AdminRoutes from "../providers/AdminRoutes";
 import ManageReports from "../Pages/Dashboard/ManageReports/ManageReports";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoutes from "../providers/PrivateRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "membership",
-                element: <Membership />
+                element: <PrivateRoutes><Membership /></PrivateRoutes>
             },
         ]
     },
