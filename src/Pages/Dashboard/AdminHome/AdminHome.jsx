@@ -68,7 +68,7 @@ const AdminHome = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                 <div className="p-4 rounded-lg shadow-lg bg-gradient-to-br from-green-400 to-green-600 text-white">
                     <div className="flex items-center justify-center">
-                        <span className="relative w-10 h-10 p-2 bg-white rounded-full">
+                        <span className="relative lg:w-10 lg:h-10 p-2 bg-white rounded-full">
                             <FaMoneyBillAlt size={24} color="green" />
                         </span>
                         <p className="ml-2 text-white text-lg font-semibold">Number of Posts</p>

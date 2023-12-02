@@ -90,7 +90,7 @@ const AddPost = () => {
 
     return (
         <div>
-            <div className='mx-24 bg-gray-200 p-10 rounded-xl'>
+            <div className='lg:mx-24 mx-0 bg-gray-200 p-4 lg:p-10 rounded-xl'>
                 {showForm ? (
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-7">

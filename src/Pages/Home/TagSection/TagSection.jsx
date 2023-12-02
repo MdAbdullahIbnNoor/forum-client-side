@@ -17,7 +17,6 @@ const TagSection = () => {
     
         fetchTags();
       }, [axiosPublic]);
-  // Dummy data for tags
 
   return (
     <section className="bg-gray-800 py-16 rounded-xl">

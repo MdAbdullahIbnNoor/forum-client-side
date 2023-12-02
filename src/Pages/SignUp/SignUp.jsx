@@ -72,25 +72,39 @@ const SignUp = () => {
             .then(result => {
                 const userInfo = {
                     email: result.user?.email,
-                    name: result.user?.displayName
-                }
+                    name: result.user?.displayName,
+                    photoURL: result.user?.photoURL,
+                    role: 'user',
+                    badge: 'Bronze',
+                    postCount: 0
+                };
+
+                // Posting user info to /users endpoint
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
+                        // Check if the user was successfully added to the database
                         if (res.data.insertedId) {
-                            console.log('user added to the database', res.data);
-                            reset();
+                            console.log('User added to the database', res.data);
+
                             Swal.fire({
-                                title: "Good job!",
-                                text: "User Profile Successfully Updated",
-                                icon: "success"
+                                title: 'Good job!',
+                                text: 'User Profile Successfully Updated',
+                                icon: 'success'
                             });
+
+                            // Redirect to the home page
+                            navigate('/');
+                        } else {
+                            console.error('Error adding user to the database');
                         }
-                        navigate("/");
                     })
+                    .catch(error => {
+                        console.error('Error posting user info:', error);
+                    });
             })
-            .catch((error) => {
-                console.log(error.message);
-            })
+            .catch(error => {
+                console.error('Error signing in with Google:', error);
+            });
     }
 
     return (

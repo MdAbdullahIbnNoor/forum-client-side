@@ -4,6 +4,8 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Modal from 'react-modal';
 import useAuth from '../../hooks/useAuth';
 
+const PAGE_SIZE = 10;
+
 const Comments = () => {
     const { user } = useAuth();
     const { postTitle } = useParams();
@@ -11,11 +13,12 @@ const Comments = () => {
     const [comments, setComments] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [fullComment, setFullComment] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const response = await axiosSecure.get(`/comments/${postTitle}`);
+                const response = await axiosSecure.get(`/comments/${postTitle}?page=${currentPage}&pageSize=${PAGE_SIZE}`);
                 setComments(response.data);
             } catch (error) {
                 console.error('Error fetching comments:', error);
@@ -23,7 +26,7 @@ const Comments = () => {
         };
 
         fetchComments();
-    }, [axiosSecure, postTitle]);
+    }, [axiosSecure, postTitle, currentPage]);
 
     const handleReport = async (commentId) => {
         try {
@@ -31,17 +34,15 @@ const Comments = () => {
             if (selectedComment && selectedComment.isReportButtonEnabled) {
                 const reportData = {
                     postTitle,
-                    userEmail: user.email, // Assuming user.email is available from useAuth
+                    userEmail: user.email,
                     commentId: selectedComment._id,
                     comment: selectedComment.comment,
                     feedback: selectedComment.feedback,
                     reporter: user.email,
                 };
 
-                // Send the report data to the server
                 await axiosSecure.post('/reports', reportData);
 
-                // Disable the Report button after reporting
                 setComments((prevComments) =>
                     prevComments.map((comment) => {
                         if (comment._id === commentId) {
@@ -103,6 +104,8 @@ const Comments = () => {
         setModalIsOpen(false);
     };
 
+    const totalPages = Math.ceil(comments.length / PAGE_SIZE);
+
     return (
         <div>
             <h2 className='text-3xl font-medium mb-10'>Comments for Post: <span className='text-info'>{postTitle}</span></h2>
@@ -139,7 +142,7 @@ const Comments = () => {
                                     </select>
                                 </td>
                                 <td className="px-4 py-3">
-                                    <button className=' bg-warning rounded-full text-white btn' onClick={() => handleReport(comment._id)} disabled={!comment.isReportButtonEnabled}>
+                                    <button className='bg-warning rounded-full text-white btn' onClick={() => handleReport(comment._id)} disabled={!comment.isReportButtonEnabled}>
                                         Report
                                     </button>
                                 </td>
@@ -147,6 +150,19 @@ const Comments = () => {
                         ))}
                     </tbody>
                 </table>
+            </div>
+
+            {/* Pagination */}
+            <div className="flex justify-center mt-4">
+                {Array.from({ length: totalPages }, (_, i) => (
+                    <button
+                        key={i}
+                        className={`mx-2 px-4 py-2 ${currentPage === i + 1 ? 'bg-blue-500 text-white' : 'bg-white text-blue-500 border border-blue-500'}`}
+                        onClick={() => setCurrentPage(i + 1)}
+                    >
+                        {i + 1}
+                    </button>
+                ))}
             </div>
 
             <Modal

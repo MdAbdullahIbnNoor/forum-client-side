@@ -4,12 +4,12 @@ import bgfrom from '../../assets/bg.jpg';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
-// import useAxiosPublic from '../../hooks/useAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const Login = () => {
     // const [disabled, setDisabled] = useState(true)
     const { signIn, googleSignIn } = useAuth()
-    // const axiosPublic = useAxiosPublic();
+    const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -47,38 +47,42 @@ const Login = () => {
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-            .then(res => {
-                console.log(res.user)
-                Swal.fire({
-                    title: "Good job!",
-                    text: "Signed In Successful",
-                    icon: "success"
-                });
-                navigate("/");
+            .then(result => {
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName,
+                    photoURL: result.user?.photoURL,
+                    role: 'user',
+                    badge: 'Bronze',
+                    postCount: 0
+                };
+
+                // Posting user info to /users endpoint
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        // Check if the user was successfully added to the database
+                        if (res.data.insertedId) {
+                            console.log('User added to the database', res.data);
+
+                            Swal.fire({
+                                title: 'Good job!',
+                                text: 'User Profile Successfully Updated',
+                                icon: 'success'
+                            });
+
+                            // Redirect to the home page
+                            navigate('/');
+                        } else {
+                            console.error('Error adding user to the database');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error posting user info:', error);
+                    });
             })
             .catch(error => {
-                console.log(error.message);
-            })
-        // {
-        //     const userInfo = {
-        //         email: result.user?.email,
-        //         name: result.user?.displayName
-        // }
-
-        // }
-        // axiosPublic.post('/users', userInfo)
-        //     .then(res => {
-        //         if (res.data.insertedId) {
-        //             console.log('user added to the database', res.data);
-        //             Swal.fire({
-        //                 title: "Good job!",
-        //                 text: "User Profile Successfully Updated",
-        //                 icon: "success"
-        //             });
-        //         }
-        //         navigate('/');
-        //     })
-        //     .catch(err => console.log(err.message))
+                console.error('Error signing in with Google:', error);
+            });
     }
 
 

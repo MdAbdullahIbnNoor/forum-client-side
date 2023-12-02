@@ -37,7 +37,7 @@ const AddAnnouncement = () => {
 
     return (
         <div>
-            <div className='mx-24 bg-gray-200 p-10 rounded-xl'>
+            <div className='lg:mx-24 bg-gray-200 p-4 lg:p-10 rounded-xl'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* Author Name */}
                     <div className='mb-7'>
@@ -91,7 +91,7 @@ const AddAnnouncement = () => {
                     <div className='mb-8'>
                         <button
                             type='submit'
-                            className='btn flex items-center bg-amber-700 text-white px-4 py-3 rounded-md hover:bg-amber-500 hover:text-gray-200'
+                            className='btn flex items-center bg-sky-700 text-white px-4 py-3 rounded-md hover:bg-sky-500 hover:text-gray-200'
                         >
                             <span>Add Announcement</span>
                         </button>
